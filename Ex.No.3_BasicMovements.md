@@ -1,6 +1,5 @@
 # Ex.No: 3  Basic movements in Unity 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+
 ### AIM: 
  To learn the basic movements translation,scaling and rotation of game objects through code.
 ### Procedure:
@@ -33,30 +32,31 @@ public class TransformOperations : MonoBehaviour
         // Translate (Move) object1 along the X-axis- Time.deltaTime to make movement smooth across all frame rates
         if (object1 != null)
         {
-           // object1.position += Vector3.right * moveSpeed;
-               object1.Translate(0.02f,0,0);
-
+            object1.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
         // Rotate object2 around the Y-axis
         if (object2 != null)
         {
-            //object2.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
-            //object2.Rotate(0,0.02f.0);
+            object2.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         }
 
         // Scale object3 up and down
         if (object3 != null)
         {
-           // float scaleChange = Mathf.PingPong(Time.time * scaleSpeed, 1f) + 0.5f; // generates a value that moves back and forth between 0 and length
-           // object3.localScale = new Vector3(scaleChange, scaleChange, scaleChange);
-            object3.localScale+=new Vector3(0.02f.0.02f,0);
-
+            float scaleChange = Mathf.PingPong(Time.time * scaleSpeed, 1f) + 0.5f; // generates a value that moves back and forth between 0 and length
+            object3.localScale = new Vector3(scaleChange, scaleChange, scaleChange);
         }
     }
 }
 ```
 ### Output:
+
+##### The Cube moves from left to right continuously.
+##### The Sphere rotates around its Y-axis.
+##### The Capsule scales up and down smoothly.
+
+![image](https://github.com/user-attachments/assets/0f67ba2d-74a6-403c-987c-eb5812cc6536)
 
 
 
